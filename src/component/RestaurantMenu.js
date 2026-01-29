@@ -10,6 +10,7 @@ const RestaurantMenu = () => {
         <li>Pizza</li>
         <li>Sushi</li>
         <li>Dessert</li>
+        <li>Paneer Tikka</li>
       </ul>
     </div>
   );
