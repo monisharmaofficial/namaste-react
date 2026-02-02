@@ -1,5 +1,13 @@
 hLet's learn Namaste React 
 
+# A class component is just a JavaScript class that React controls.
+👉 React creates the class instance
+👉 Initial state is set
+👉 render() runs → UI appears
+👉 Component mounts to DOM
+👉 State/props change → re-render
+👉 Component removed → cleanup
+
 # this is the way how we create a h1 tag in core react 
 const heading = React.createElement("h1",{id:"heading"},"Hello From Akshay Saini")
 const root = ReactDOM.createRoot(document.getElementById("root"))
