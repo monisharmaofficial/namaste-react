@@ -1,7 +1,9 @@
+import User from './User'
 const About = () => {
     return(
         <div>
-            <h1>About Us</h1>
+            <h2>About Us</h2>
+            <User about="Class based Component"/>
         </div>
     )
 }

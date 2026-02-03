@@ -1,5 +1,5 @@
-import Child from './Childclass'
-import React from 'react';
+import React from "react";
+import Child from "./FirstChild";
 
 class Parent extends React.Component {
   constructor() {
@@ -11,13 +11,15 @@ class Parent extends React.Component {
     console.log("Parent didMount");
   }
 
-  componentDidUpdate() {
-    console.log("Parent didUpdate");
-  }
-
   render() {
     console.log("Parent render");
-    return <Child />;
+    return (
+      <div>
+        <p>Parent Render Called</p>
+        <Child />
+      </div>
+    );
   }
 }
+
 export default Parent;
