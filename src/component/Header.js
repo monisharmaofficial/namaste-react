@@ -16,6 +16,7 @@ const Header = () => {
           <li><Link to="/about">About Swiggy</Link></li>
           <li>Delivering For Everyone</li>
           <li>Newsroom</li>
+          <li><Link to="/city/noida/123">Menu</Link></li>
           <li><Link to="/contact">Contact</Link></li>
           <li>Careers</li>
         </ul>
