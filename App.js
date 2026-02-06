@@ -9,6 +9,8 @@ import Error from "./src/component/Error";
 // import RestaurantMenu from "./src/component/RestaurantMenu";
 import User from './src/component/User';
 import Parent from './src/component/Parentclass'
+import appStore from "./src/utils/appStore";
+import { Provider } from "react-redux";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 // chunking
@@ -24,10 +26,12 @@ const Body = lazy(()=>import("./src/component/Body"))
 
 const AppLayout = () => {
   return (
+    <Provider store={appStore}>
     <div className="app">
       <Header />
       <Outlet />
     </div>
+    </Provider>
   );
 };
 

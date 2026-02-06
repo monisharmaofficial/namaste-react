@@ -1,26 +1,37 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { CDN_URL } from "../utils/constant";
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/CartSlice";
 
 const RestaurantMenu = () => {
   const [resInfo, setResInfo] = useState(null);
   const params = useParams();
 
-  console.log(params);
+  const dispatch = useDispatch();
+
+  const handleAddItem = (res) => {
+    //dispatch an action
+    dispatch(addItem(res));
+  };
+
+  // console.log(params);
 
   const fetchMenuList = async () => {
     // const response = await fetch(
     //   `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.5962027&lng=77.3842715&restaurantId=${params.resId}&catalog_qa=undefined&submitAction=ENTER`,
     // );
 
-    const response = await fetch("https://swiggy-api-4c740.web.app/swiggy-api.json")
+    const response = await fetch(
+      "https://swiggy-api-4c740.web.app/swiggy-api.json",
+    );
 
     // console.log("Response Object:", response);
     // console.log("Status:", response.status);
     // console.log("OK:", response.ok);
 
     const json = await response.json();
-    console.log(json);
+    // console.log(json);
     setResInfo(json.data);
   };
 
@@ -49,7 +60,7 @@ const RestaurantMenu = () => {
             availability,
             sla,
             locality,
-            costForTwo
+            costForTwo,
           } = res.info;
 
           return (
@@ -62,8 +73,9 @@ const RestaurantMenu = () => {
                 <p className="text-sm text-gray-500">
                   Cuisines: {cuisines.join(", ")}
                 </p>{" "}
-
-                <p className="text-sm text-gray-500">locality: {locality} , area: {areaName} </p>
+                <p className="text-sm text-gray-500">
+                  locality: {locality} , area: {areaName}{" "}
+                </p>
                 <p className="text-sm">
                   ⭐ {avgRating} • {sla?.deliveryTime} mins • {costForTwo}
                 </p>
@@ -74,14 +86,18 @@ const RestaurantMenu = () => {
                 >
                   {availability?.opened ? "Open" : "Closed"}
                 </p>
-        
               </div>
-              <div className="w-1/4 flex justify-end py-6">
+              <div className=" relative w-1/4 flex justify-end py-6">
                 <img
                   src={CDN_URL + cloudinaryImageId}
                   alt={name}
-                  className="w-32 h-32 object-cover rounded-lg"
+                  className="w-38 h-38 object-cover rounded-lg"
                 />
+                <button
+                  className="absolute bg-amber-50 px-4 py-3 font-bold rounded-md inline-block"
+                  onClick={()=>handleAddItem(res) }>
+                  Add+
+                </button>
               </div>
             </div>
           );
