@@ -6,6 +6,7 @@ import Header from "./src/component/Header";
 import About from "./src/component/About";
 import Contact from "./src/component/Contact";
 import Error from "./src/component/Error";
+import Cart from "./src/component/Cart";
 // import RestaurantMenu from "./src/component/RestaurantMenu";
 import User from './src/component/User';
 import Parent from './src/component/Parentclass'
@@ -51,6 +52,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+            {
+        path: "/cart",
+        element: <Cart />,
       },
       {
         path: "/city/:cityName/:resId",

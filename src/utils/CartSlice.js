@@ -15,6 +15,7 @@ reducers:{
     },
     clearItem:(state)=>{
         state.items.length = 0;
+        // return{items:[]} we can do this also
     }
 }
 })

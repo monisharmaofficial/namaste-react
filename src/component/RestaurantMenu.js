@@ -95,7 +95,8 @@ const RestaurantMenu = () => {
                 />
                 <button
                   className="absolute bg-amber-50 px-4 py-3 font-bold rounded-md inline-block"
-                  onClick={()=>handleAddItem(res) }>
+                  onClick={() => handleAddItem(res)}
+                >
                   Add+
                 </button>
               </div>

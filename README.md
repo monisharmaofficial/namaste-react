@@ -56,4 +56,6 @@ Function returns JSX → UI appears
 //   -copyright
 //   -links
 
-# to find the image url cludanirary go to swigggy website click any image then open image in new tab then try to change the url where he upload the image                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+# to find the image url cludanirary go to swigggy website click any image then open image in new tab then try to change the url where he upload the image                                                                                                                           
+
+#  in vanialla (older redux) we can not directly change the state that means we can not directly mutate the state but we can do this in redux toolkit here we can mutate state directly. Actually redux toolkit behind the scene perform te same task as vanialla did but it does not ask developers to do these. react redux use immer libarary to perform the task it takes the new state and old state and find the diff then give the updated state to the redux.
