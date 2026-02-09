@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { resData, swiggyRestaurants } from "../utils/mockdata";
-import RestaurantCard from "../component/RestaurantCard";
+import RestaurantCard, {availabilityCheck} from "../component/RestaurantCard";
 import Shimmer from "./Shimmer";
 import useRestaurentCard from "../utils/useResturentCard";
 import useOnlineStatus from "../utils/useOnlineStatus";
@@ -21,6 +21,8 @@ const Body = () => {
   } = useRestaurentCard()
   
   const [searchText, setSearchText] = useState("");
+
+  const RestaurantCardOpen = availabilityCheck(RestaurantCard)
 
   // console.log("Body Rendered before useEffect");
 
@@ -102,6 +104,8 @@ const Body = () => {
 
         <div className="restaurant-cards">
           {filteredRestaurants.map((restaurant) => (
+            //if the restaurant is open then add the open lable to it
+            restaurant.info.availability.opened ? <RestaurantCardOpen key={restaurant.info.id} swiggyData={restaurant}/> : 
             <RestaurantCard key={restaurant.info.id} swiggyData={restaurant} />
           ))}
         </div>

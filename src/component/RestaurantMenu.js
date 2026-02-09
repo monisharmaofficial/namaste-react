@@ -66,9 +66,9 @@ const RestaurantMenu = () => {
           return (
             <div
               key={id}
-              className="flex justify-between items-start border-b py-6 px-4"
+              className="flex justify-between items-start border-b py-3 px-2"
             >
-              <div className="w-3/4 space-y-5">
+              <div className="w-3/4 space-y-2">
                 <h3 className="text-lg font-semibold">{name}</h3>
                 <p className="text-sm text-gray-500">
                   Cuisines: {cuisines.join(", ")}
@@ -87,14 +87,14 @@ const RestaurantMenu = () => {
                   {availability?.opened ? "Open" : "Closed"}
                 </p>
               </div>
-              <div className=" relative w-1/4 flex justify-end py-6">
+              <div className=" relative w-1/4 flex justify-end">
                 <img
                   src={CDN_URL + cloudinaryImageId}
                   alt={name}
-                  className="w-38 h-38 object-cover rounded-lg"
+                  className="w-40 h-40 object-cover rounded-lg"
                 />
                 <button
-                  className="absolute bg-amber-50 px-4 py-3 font-bold rounded-md inline-block"
+                  className="absolute bg-amber-50 px-2 font-bold rounded-md inline-block"
                   onClick={() => handleAddItem(res)}
                 >
                   Add+
