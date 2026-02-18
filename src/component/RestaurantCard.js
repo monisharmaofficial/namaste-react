@@ -1,6 +1,7 @@
 import { CDN_URL } from "../utils/constant";
 
 const RestaurantCard = ({ swiggyData }) => {
+  // console.log("swiggyData", swiggyData);
   const {
     id,
     name,

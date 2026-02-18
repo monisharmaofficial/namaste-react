@@ -1,15 +1,27 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const useOnlineStatus = () => {
-  const [onlineStatus, setOnlineStatus] = useState();
-  window.addEventListener("online", () => {
-    // console.log("Internet is back!");
-    setOnlineStatus(true);
-  });
-  window.addEventListener("offline", () => {
-    // console.log("Connection lost!");
-    setOnlineStatus(false);
-  });
+  const [onlineStatus, setOnlineStatus] = useState(navigator.onLine);
+
+  useEffect(() => {
+    const handleOnline = () => {
+      setOnlineStatus(true);
+    };
+
+    const handleOffline = () => {
+      setOnlineStatus(false);
+    };
+
+    window.addEventListener("online", handleOnline);
+    window.addEventListener("offline", handleOffline);
+
+    // cleanup (important)
+    return () => {
+      window.removeEventListener("online", handleOnline);
+      window.removeEventListener("offline", handleOffline);
+    };
+  }, []);
+
   return onlineStatus;
 };
 
