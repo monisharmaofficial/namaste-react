@@ -4,6 +4,23 @@ import "@testing-library/jest-dom";
 
 describe("Contact Us Page test cases", () => {
     //describe is just to group all the test cases related to contact us page and it takes two arguments first is string and second is a callback function and test word can be written as it both are same.
+
+    // beforeAll(()=>{
+    //     console.log("before all test cases");
+    // })
+
+    // beforeEach(()=>{
+    //     console.log("before each test case");
+    // })
+
+    // afterAll(()=>{
+    //     console.log("after all test cases");
+    // } )
+
+    // afterEach(()=>{
+    //     console.log("after each test case");
+    // })  
+
   test("should load the contact component", () => {
     //rendering the component
     render(<Contact />);

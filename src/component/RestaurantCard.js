@@ -13,7 +13,7 @@ const RestaurantCard = ({ swiggyData }) => {
     availability,
   } = swiggyData.info;
   return (
-    <div key={id} className="cards">
+    <div data-testid="restaurant-card" key={id} className="cards">
       <img src={CDN_URL + cloudinaryImageId} alt="food" />
       <h3>{name}</h3>
       <p>{cuisines.join(", ")}</p>

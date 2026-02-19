@@ -24,3 +24,5 @@ module.exports = {
 -install @babel/preset-react library - to make jsx work in test cases then we have to include @babel/preset-react inside our babel config write this -> ["@babel/preset-react",{runtime:"automatic"}],
 
 -Install @testing-library/jest-dom
+
+# if there is a component which takes a props and we want to check is it rendred or not so in that situation whatever we passed in props we make a mocks data for that we will not use the actual data. mocks data is like duplicate or similiar data of the data which comes thruogh the props bcs or testing we can not use the actual data.
