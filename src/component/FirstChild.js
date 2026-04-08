@@ -1,5 +1,5 @@
 import React from "react";
-import SecondChild from "./secondChild";
+import SecondChild from "./SecondChild";
 
 class FirstChild extends React.Component {
   constructor() {
